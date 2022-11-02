@@ -1,20 +1,16 @@
-import {
-    Button, ButtonWrapper,
-    InputRange,
-    QuantityItem,
-    RangeNums,
-    RangeNumsRow, StartButton,
-    StartModal,
-    StartPageWrapper
-} from "./startpage.style";
+import { useState, useContext} from "react";
+import { Button, ButtonWrapper, InputRange, QuantityItem, RangeNums, RangeNumsRow, StartButton, StartModal, StartPageWrapper} from "./startpage.style";
 import Link from 'next/link';
-import Alert from '@mui/material/Alert';
-import AlertTitle from '@mui/material/AlertTitle';
-import Stack from '@mui/material/Stack';
-
+import userContext from "../../context/userContext";
 import startPageBg from "../assets/startpage/start-bg.png";
-import {useEffect, useState} from "react";
 export default function StartPage(){
+
+    const userCtx = useContext(userContext);
+    const { changeSportTypeId } = userCtx;
+
+    const handleSportId = async function (item: number) {
+        changeSportTypeId(item);
+    }
 
     return(
         <StartPageWrapper style={{background: `url(${startPageBg.src})`}}>
@@ -26,7 +22,7 @@ export default function StartPage(){
                     <RangeNums>4</RangeNums>
                     <RangeNums>5</RangeNums>
                 </RangeNumsRow>
-                <InputRange type={"range"} step="1" defineWidth={"366px"} min="0" max="3"/>
+                <InputRange type="range" onChange={(e: any) => handleSportId(e.target.value)} step="1" defineWidth={"366px"} min="0" max="5"/>
                 <QuantityItem>Значения</QuantityItem>
                 <RangeNumsRow defineWidth={"531px"}>
                     <RangeNums>A</RangeNums>
@@ -42,7 +38,7 @@ export default function StartPage(){
                     <Button defaultOpacity={"0.7"}>По убыванию</Button>
                 </ButtonWrapper>
                 <Link href="/main" style={{textDecoration: "none"}}>
-                    <StartButton >Играть</StartButton>
+                    <StartButton>Играть</StartButton>
                 </Link>
             </StartModal>
         </StartPageWrapper>

@@ -7,7 +7,8 @@ import { style } from "./mainpage.style";
 import Typography from "@mui/material/Typography";
 import * as React from "react";
 import SettingsIcon from "@mui/icons-material/Settings";
-import { useState} from "react";
+import { useState, useContext} from "react";
+import UserContext from "../../context/userContext";
 
 export default function MainPage(){
 
@@ -24,12 +25,17 @@ export default function MainPage(){
         setInitialUI(...filtered);
     }
 
+    const userCtx = useContext(UserContext);
+    const { sportTypeId } = userCtx;
+
+    console.log(sportTypeId)
+
     return(
         <div>
             <ButtonSetting onClick={handleOpen} color={initialUI.colors}> <SettingsIcon style={{fontSize: "40px"}} /> </ButtonSetting>
             <MainPageWrapper style={{backgroundImage: `url(${initialUI.mainBg.src})`}}>
                 <ButtomNavWrapper>
-                    <BottomNav data={initialUI.assets} bottomImage={initialUI.bottomImg}/>
+                    <BottomNav data={initialUI.assets.slice(0, `${sportTypeId}`)} bottomImage={initialUI.bottomImg}/>
                 </ButtomNavWrapper>
             </MainPageWrapper>
 
