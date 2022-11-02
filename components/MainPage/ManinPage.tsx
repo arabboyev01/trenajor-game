@@ -4,15 +4,13 @@ import {makeUI, changeUIbutton} from "../BottomNav/coinsDumbData"
 import Modal from "@mui/material/Modal";
 import Box from "@mui/material/Box";
 import { style } from "./mainpage.style";
-import Typography from "@mui/material/Typography";
-import * as React from "react";
 import SettingsIcon from "@mui/icons-material/Settings";
 import { useState, useContext} from "react";
 import UserContext from "../../context/userContext";
 
 export default function MainPage(){
 
-    const [open, setOpen] = React.useState(false);
+    const [open, setOpen] = useState(false);
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
     const [initialUI, setInitialUI] = useState(makeUI[0]);
