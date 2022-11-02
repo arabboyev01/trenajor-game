@@ -20,15 +20,15 @@ export default function StartPage(){
         <StartPageWrapper style={{background: `url(${startPageBg.src})`}}>
             <StartModal>
                 <QuantityItem>Кол-во предметов</QuantityItem>
-                <RangeNumsRow>
+                <RangeNumsRow defineWidth={"366px"}>
                     <RangeNums>2</RangeNums>
                     <RangeNums>3</RangeNums>
                     <RangeNums>4</RangeNums>
                     <RangeNums>5</RangeNums>
                 </RangeNumsRow>
-                <InputRange type={"range"}  defineWidth={"366px"} min="0" max="5" value="0" step="1"/>
+                <InputRange type={"range"} step="1" defineWidth={"366px"} min="0" max="3"/>
                 <QuantityItem>Значения</QuantityItem>
-                <RangeNumsRow>
+                <RangeNumsRow defineWidth={"531px"}>
                     <RangeNums>A</RangeNums>
                     <RangeNums>9</RangeNums>
                     <RangeNums>19</RangeNums>
@@ -36,7 +36,7 @@ export default function StartPage(){
                     <RangeNums>99</RangeNums>
                     <RangeNums>999</RangeNums>
                 </RangeNumsRow>
-                <InputRange type={"range"} defineWidth={"531px"} min="0" max="100" value="0" step="10" />
+                <InputRange type={"range"} step="10" defineWidth={"531px"} min="0" max="100"  />
                 <ButtonWrapper>
                     <Button defaultOpacity={"1"}>По возрастанию</Button>
                     <Button defaultOpacity={"0.7"}>По убыванию</Button>

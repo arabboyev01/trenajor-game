@@ -24,6 +24,7 @@ export const StartModal = styled.div`
    display: flex;
    flex-direction: column;
    align-items: center;
+  
 `
 export const QuantityItem = styled.h1`
 font-family: 'Helvetica';
@@ -130,7 +131,7 @@ border-radius: 10px;
 `
 
 export const RangeNumsRow = styled.div<RangeBtn>`
-   max-width: ${(props) => props.defineWidth};
+   width: ${(props) => props.defineWidth};
    display: flex;
    flex-direction: row;
    align-items: center;
@@ -146,6 +147,7 @@ export const RangeNums = styled.p`
    line-height: 29px;
    text-align: center;
    color: #4F4B61;
+   padding: 0 10px;
 `
 
 export const ButtonWrapper = styled.div`
