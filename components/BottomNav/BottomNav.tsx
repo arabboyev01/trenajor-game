@@ -1,21 +1,23 @@
+import * as React from "react";
 import {BottomNavWrapper, CoinPlaces, SingleCoin} from "./bottomnav.style";
-import BottomImage from "../assets/mainPage/bottom1.png";
 import Draggable from 'react-draggable';
-import { coinsDumbData } from "./coinsDumbData";
+import { Key } from "react";
 
-export default function BottomNav(){
-    return(
-        <BottomNavWrapper style={{backgroundImage: `url(${BottomImage.src})`}}>
+export default function BottomNav({data, bottomImage}: any) {
 
-                {coinsDumbData.map(item =>
-                    <CoinPlaces>
+    return (
+        <div>
+            <BottomNavWrapper style={{backgroundImage: `url(${bottomImage.src})`}}>
+             {data.map((item: { id: Key | null | undefined; image: { src: any; }; }) =>
+                 <CoinPlaces>
                     <Draggable>
                         <div>
                     <SingleCoin key={item.id} style={{backgroundImage: `url(${item.image.src})`}}></SingleCoin>
                         </div>
                     </Draggable>
-                    </CoinPlaces>
-                )}
-        </BottomNavWrapper>
+                 </CoinPlaces>
+              )}
+            </BottomNavWrapper>
+        </div>
     )
 }
