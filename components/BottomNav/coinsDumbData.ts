@@ -20,26 +20,32 @@ export const makeUI: InterfaceUI[] = [
             {
                 id: 1,
                 image: coinImage,
+                number: 10,
             },
             {
                 id: 2,
                 image: coinImage,
+                number: 10,
             },
             {
                 id: 3,
                 image: coinImage,
+                number: 10,
             },
             {
                 id: 4,
                 image: coinImage,
+                number: 10,
             },
             {
                 id: 5,
                 image: coinImage,
+                number: 10,
             },
             {
                 id: 6,
                 image: coinImage,
+                number: 10,
             }
         ]
     },

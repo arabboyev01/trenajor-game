@@ -16,12 +16,14 @@ export default function BottomNav({data, bottomImage, value}: any) {
     return (
         <div>
             <BottomNavWrapper style={{backgroundImage: `url(${bottomImage.src})`}}>
-             {data.map((item: { id: Key | null | undefined; image: { src: any; }; }) =>
+             {data.map((item: {
+                 number: number;
+                 id: Key | null | undefined; image: { src: any; }; }) =>
                  <CoinPlaces>
                     <Draggable>
                         <div>
                            <SingleCoin key={item.id} style={{backgroundImage: `url(${item.image.src})`}}>
-                               <CoinText>{initNums}</CoinText>
+                               <CoinText>{item.number}</CoinText>
                            </SingleCoin>
                         </div>
                     </Draggable>
