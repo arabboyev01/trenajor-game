@@ -1,12 +1,11 @@
-import {ButtomNavWrapper, MainPageWrapper, ButtonSetting} from "./mainpage.style";
-import BottomNav from "../BottomNav/BottomNav";
+import { useState, useContext} from "react";
+import UserContext from "../../context/userContext";
+import {ButtomNavWrapper, MainPageWrapper, ButtonSetting, style} from "./mainpage.style";
 import {makeUI, changeUIbutton} from "../BottomNav/coinsDumbData"
 import Modal from "@mui/material/Modal";
 import Box from "@mui/material/Box";
-import { style } from "./mainpage.style";
 import SettingsIcon from "@mui/icons-material/Settings";
-import { useState, useContext} from "react";
-import UserContext from "../../context/userContext";
+import BottomNav from "../BottomNav/BottomNav";
 
 export default function MainPage(){
 
@@ -37,7 +36,6 @@ export default function MainPage(){
                     <BottomNav data={initialUI.assets.slice(0, `${id}`)} value={values} bottomImage={initialUI.bottomImg}/>
                 </ButtomNavWrapper>
             </MainPageWrapper>
-
             <div>
                 <Modal
                     open={open}

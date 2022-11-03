@@ -23,6 +23,23 @@ export const CoinPlaces = styled.div`
        border-radius: 50%;
        background: rgba(0, 0, 0, 0.06);
        box-shadow: inset 0px 4px 25px rgba(0, 0, 0, 0.25);
+       position: relative;
+`
+
+export const CoinText = styled.p`
+        font-family: 'Calibri';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 56px;
+        line-height: 68px;
+        display: flex;
+        align-items: center;
+        letter-spacing: 2px;
+        color: #FFFFFF;
+        position: absolute;
+        top: 25%;
+        left: 40%;
+        text-shadow: 5px solid rgba(36, 37, 70, 1);
 `
 
 

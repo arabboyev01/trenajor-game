@@ -4,9 +4,8 @@ import UserContext from "./userContext";
 const UserContextProvider = (props: any) => {
 
     const userCtx = useContext(UserContext);
-    const userVal = useContext(UserContext);
     const [id, setId] = useState(userCtx.sportTypeId);
-    const [values, setValues] = useState(userVal.values);
+    const [values, setValues] = useState(userCtx.values);
 
     const handleChangeSportId = (id: number) => {
         setId(id);
