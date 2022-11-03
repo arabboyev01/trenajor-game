@@ -3,7 +3,7 @@ import {BottomNavWrapper, CoinPlaces, SingleCoin} from "./bottomnav.style";
 import Draggable from 'react-draggable';
 import { Key } from "react";
 
-export default function BottomNav({data, bottomImage}: any) {
+export default function BottomNav({data, bottomImage, value}: any) {
 
     return (
         <div>
@@ -12,7 +12,7 @@ export default function BottomNav({data, bottomImage}: any) {
                  <CoinPlaces>
                     <Draggable>
                         <div>
-                    <SingleCoin key={item.id} style={{backgroundImage: `url(${item.image.src})`}}></SingleCoin>
+                           <SingleCoin key={item.id} style={{backgroundImage: `url(${item.image.src})`}}></SingleCoin>
                         </div>
                     </Draggable>
                  </CoinPlaces>

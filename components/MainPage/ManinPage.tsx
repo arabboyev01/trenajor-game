@@ -24,16 +24,17 @@ export default function MainPage(){
     }
 
     const userCtx = useContext(UserContext);
-    const { sportTypeId } = userCtx;
+    let { sportTypeId } = userCtx;
+    const id = sportTypeId === 0 ? sportTypeId = 2 : sportTypeId;
 
-    console.log(sportTypeId)
+    let {values} = userCtx;
 
     return(
         <div>
             <ButtonSetting onClick={handleOpen} color={initialUI.colors}> <SettingsIcon style={{fontSize: "40px"}} /> </ButtonSetting>
             <MainPageWrapper style={{backgroundImage: `url(${initialUI.mainBg.src})`}}>
                 <ButtomNavWrapper>
-                    <BottomNav data={initialUI.assets.slice(0, `${sportTypeId}`)} bottomImage={initialUI.bottomImg}/>
+                    <BottomNav data={initialUI.assets.slice(0, `${id}`)} value={values} bottomImage={initialUI.bottomImg}/>
                 </ButtomNavWrapper>
             </MainPageWrapper>
 

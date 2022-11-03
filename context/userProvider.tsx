@@ -4,17 +4,25 @@ import UserContext from "./userContext";
 const UserContextProvider = (props: any) => {
 
     const userCtx = useContext(UserContext);
+    const userVal = useContext(UserContext);
     const [id, setId] = useState(userCtx.sportTypeId);
+    const [values, setValues] = useState(userVal.values);
 
     const handleChangeSportId = (id: number) => {
         setId(id);
     };
+
+    const handleChangeValueOfGame = (item: number) => {
+        setValues(item);
+    }
 
     return (
         <UserContext.Provider
             value={{
                 sportTypeId: id,
                 changeSportTypeId: handleChangeSportId,
+                values: values,
+                changeValueOfGame: handleChangeValueOfGame,
             }}
         >
             {props.children}
