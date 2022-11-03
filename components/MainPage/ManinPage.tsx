@@ -1,11 +1,12 @@
-import { useState, useContext} from "react";
+import {useState, useContext, useEffect} from "react";
 import UserContext from "../../context/userContext";
-import {ButtomNavWrapper, MainPageWrapper, ButtonSetting, style} from "./mainpage.style";
+import {ButtomNavWrapper, MainPageWrapper, ButtonSetting, style, UiButton, UiName, UiTitle, wrapper} from "./mainpage.style";
 import {makeUI, changeUIbutton} from "../BottomNav/coinsDumbData"
 import Modal from "@mui/material/Modal";
 import Box from "@mui/material/Box";
 import SettingsIcon from "@mui/icons-material/Settings";
 import BottomNav from "../BottomNav/BottomNav";
+import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 
 export default function MainPage(){
 
@@ -43,10 +44,17 @@ export default function MainPage(){
                     aria-labelledby="modal-modal-title"
                     aria-describedby="modal-modal-description"
                 >
-                    <Box sx={style} >
+                    <Box sx={wrapper}>
+                        <UiTitle>Choose a theme </UiTitle>
+                        <Box  sx={style} >
                         {changeUIbutton.map(item =>
-                            <button onClick={() => changeUI(item.category)} key={item.id}>{item.name}</button>
+                            <UiButton onClick={() => changeUI(item.category)} key={item.id} style={{backgroundImage: `url(${item.image.src})`}}>
+                                <UiName>
+                                    {item.category == initialUI.category ? <CheckCircleIcon style={{fontSize: "2rem",color: "green" }}/> : item.name}
+                                </UiName>
+                            </UiButton>
                         )}
+                        </Box>
                     </Box>
                 </Modal>
             </div>

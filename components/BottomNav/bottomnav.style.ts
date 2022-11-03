@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+
 export const BottomNavWrapper = styled.section`
        width: 900px;
        height: 222px;
@@ -33,13 +34,12 @@ export const CoinText = styled.p`
         font-size: 56px;
         line-height: 68px;
         display: flex;
+        flex-direction: column;
         align-items: center;
         letter-spacing: 2px;
         color: #FFFFFF;
-        position: absolute;
-        top: 25%;
-        left: 40%;
-        text-shadow: 5px solid rgba(36, 37, 70, 1);
+        text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.6);
+        padding-top: 40px;
 `
 
 
