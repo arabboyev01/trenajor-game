@@ -7,6 +7,7 @@ import Box from "@mui/material/Box";
 import SettingsIcon from "@mui/icons-material/Settings";
 import BottomNav from "../BottomNav/BottomNav";
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
+import useSound from 'use-sound';
 
 export default function MainPage(){
 
